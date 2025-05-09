@@ -1,0 +1,10 @@
+.card3d-item {
+  /* 基础变换属性已在行内样式定义 */
+  transition: transform 300ms ease-in-out;
+}
+
+.card3d-item:hover {
+  /* 叠加Y轴位移效果 */
+  transform: translateY(-20px) rotateX(-10deg) rotateY(-30deg)
+    translate3d(0, 0, var(--z-translate));
+}

@@ -1,0 +1,17 @@
+.cardItem {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(-10deg) rotateY(-30deg)
+    translate3d(0, 0, var(--z-translate));
+  transition: transform 300ms ease-in-out;
+  border-radius: 1.5rem;
+  border: 4px solid rgb(15 23 42);
+  box-shadow: 0 20px 15px -5px rgb(15 23 42 / 0.5);
+}
+
+.cardItem:hover {
+  transform: translate(-50%, -50%) rotateX(-10deg) rotateY(-30deg)
+    translate3d(0, -30%, var(--z-translate));
+}
