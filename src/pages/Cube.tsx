@@ -1,15 +1,20 @@
 import { useState } from "react";
 
 function Cube() {
-    const [rotateX, setRotateX] = useState<number>(0)
-    const [rotateY, setRotateY] = useState<number>(0)
+    const [rotateX, setRotateX] = useState<number>(330)
+    const [rotateY, setRotateY] = useState<number>(310)
     const [rotateZ, setRotateZ] = useState<number>(0)
+    const handleReset = () => {
+        setRotateX(330)
+        setRotateY(310)
+        setRotateZ(0)
+    }
 
 
     return (
         <div className="w-full h-screen flex gap-100 justify-center items-center bg-slate-100">
             {/* 旋转 */}
-            <div>
+            <div className="flex flex-col items-center gap-4 text-xl">
                 <div className="flex flex-col">
                     <label htmlFor="rotateX">rotateX</label>
                     <input id="rotateX" type="range" min="0" max="360" step="1" className="border-2 border-black w-64"
@@ -25,6 +30,7 @@ function Cube() {
                     <input id="rotateZ" type="range" min="0" max="360" step="1" className="border-2 border-black w-64"
                         value={rotateZ} onChange={(e) => setRotateZ(Number(e.target.value))} />
                 </div>
+                <button onClick={handleReset} className="px-4 py-2 rounded-2xl bg-black/70 text-white hover:bg-black/95">RESET</button>
             </div>
             {/* 立方体 */}
             <div className="w-[200px] h-[200px] ">
